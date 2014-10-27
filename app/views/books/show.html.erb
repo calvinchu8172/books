@@ -1,0 +1,6 @@
+<%= @book.name %>
+<%= simple_format(@book.description) %>
+<%= simple_format(@book.isbn) %>
+
+
+<p><%= link_to 'Back to index', :controller => 'books', :action => 'index' %></p>
