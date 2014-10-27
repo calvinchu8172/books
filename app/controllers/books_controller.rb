@@ -14,7 +14,8 @@ end
 def create
   @book = Book.new(book_params)
   if @book.save
-    redirect_to :action => :index
+    #redirect_to :action => :index
+    redirect_to books_url
     flash[:notice] = "Book was successfully created"
   else
 	render :action => :new
@@ -31,7 +32,8 @@ end
 
 def update
   if @book.update_attributes(book_params)
-     redirect_to :action => :show, :id => @book
+     #redirect_to :action => :show, :id => @book
+     redirect_to event_url(@event)
      flash[:notice] = "Book was successfully updated"
   else
   	render :action => :edit

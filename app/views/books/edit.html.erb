@@ -1,4 +1,5 @@
-<%= form_for @book, :url => { :controller => 'books', :action => 'update', :id => @book } do |f| %>
+<%#= form_for @book, :url => { :controller => 'books', :action => 'update', :id => @book } do |f| %>
+    <%= form_for @book, :url => book_path(@book), :method => :patch do |f| %>
     <%= render :partial => 'form', :locals => { :f => f } %> 
 
     <%= f.submit "Update" %>

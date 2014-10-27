@@ -3,4 +3,5 @@
 <%= simple_format(@book.isbn) %>
 
 
-<p><%= link_to 'Back to index', :controller => 'books', :action => 'index' %></p>
+<p><%#= link_to 'Back to index', :controller => 'books', :action => 'index' %>
+	<%= link_to 'Back to index', books_path %></p>
