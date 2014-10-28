@@ -33,7 +33,7 @@ end
 def update
   if @book.update_attributes(book_params)
      #redirect_to :action => :show, :id => @book
-     redirect_to event_url(@event)
+     redirect_to event_url(@book)
      flash[:notice] = "Book was successfully updated"
   else
   	render :action => :edit
