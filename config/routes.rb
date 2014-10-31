@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  get "welcome/say_hello" => "welcome#say"
+  get "welcome" => "welcome#index"
+
+  root :to => "welcome#index"
+
+  resources :books
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,5 +63,5 @@ Rails.application.routes.draw do
   #   end
 
   #match ':controller(/:action(/:id(.format)))', :via => :all
-  resources :books
+  
 end

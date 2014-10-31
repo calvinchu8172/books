@@ -1,20 +1,24 @@
-<%= paginate @books %>
+<table class="table table-striped">
 
-<ul>
+
+<tr>
+<td><%= paginate @books %></td>
+</tr>
+
 <% @books.each do |book| %>
-  <li>
- 	  <%= book.name %>
+<tr>
+ 	  <td><%= book.name %><td>
   <%#= link_to 'Show', :controller => 'books', :action => 'show', :id => book %>
   <%#= link_to 'Edit', :controller => 'books', :action => 'edit', :id => book %>
   <%#= link_to 'Delete', :controller => 'books', :action => 'destroy', :id => book %>
-  <%= link_to "Show", book_path(book) %>
-  <%= link_to 'Edit', edit_book_path(book) %>
-  <%= button_to 'Delete', book_path(book), :method => :delete %>
-
-  </li>
+  <td><button type="button" class="btn btn-default"><%= link_to "Show", book_path(book) %></button></td>
+  <td><button type="button" class="btn btn-primary"><%= link_to 'Edit', edit_book_path(book) %></button></td>
+  <td><button type="button" class="btn btn-danger"><%= link_to 'Delete', book_path(book), :method => :delete %></button></td>
+  <td><%= button_to 'Delete', book_path(book), :method => :delete %></td>
+</tr>
 <% end %>
-</ul>
 <%#= link_to 'New book', :controller => 'books', :action => 'new' %>
-
-<%= link_to 'New Book', new_book_path %>
-
+<tr>
+<td><%= link_to 'New Book', new_book_path %></td>
+</tr>
+</table>
